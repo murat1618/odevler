@@ -1,1 +1,1 @@
-# odevler
+# PYTHON-Ödevler
