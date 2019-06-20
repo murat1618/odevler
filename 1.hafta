@@ -1,0 +1,109 @@
+#kelime çerçeveleme#
+
+ülke= input("Lütfen bir ülke ismi yazınız: ")
+print("""
+**********************************
+*                                *
+*                                *
+*                                *""")
+print("  \t  ",ülke,"\n","  \t  ","_"*len(ülke),sep="")
+print("""
+*                                *
+*                                *
+*                                *
+**********************************
+""")
+------------------------------------------------------------------------------------
+#km'yi mil cinsinden hesaplama#
+
+soru="Kullanıcıdan input ile km cinsinden mesafe bilgisi alıp, bu bilgiyi mile dönüştürün ve sonucu ekrana printleyin."
+print(soru,"\n","""
+Merhaba!""","\n","""Şimdi sizinle günde kaç km koştuğunuzu mil cinsinden bulacağız.""",sep="")
+km= int(input("Lütfen bir gün boyunca kaç km koştuğunuzu yazınız?: "))
+mil= int(0.6213*float(km))
+print(mil,"mil koşuyorsunuz. Bu sizin için bir hiç daha çok koşabilirsiniz.")
+------------------------------------------------------------------------------------
+#not hesaplama#
+
+print("""Oğrenci not ortalama programi
+
+Icerik:
+Kullanicidan input ile ad-soyad, vize, final ve ders takip bilgilerini alip bu degerleri yuzdelik oranlarina gore hesaplayin ve yil sonu notunu cikarin.
+
+Yontem:
+-Sinav puanlari ve ders takip puani 0-100 arasidir. 
+-Bir öğrencinin gitmesi gereken toplam ders sayısı 20’dir. Kaçırılan her ders için 5 puan kırılacaktır. (Orn: 3 ders kaciran bir ogrencinin ders takip puani: 100-(3x5)=85 )
+Oranlar :
+- Vize Notu ( 30%)
+- Final Notu (50%)
+- Ders takip (20%)
+
+Sonuc:
+    0.    Output olarak ogrencinin yil sonu puanini ekrana pritleyin. 
+    0.    Ogrenci ad-soyad, vize-final-ders takip bilgilerini ve hesapladiginiz yil sonu puanini “ogrenciNotHesaplama” isimli bir dosyaya kaydedin.
+    """)
+
+Ad=input("Adınız: ")
+Soyad=input("Soyadınız: ")
+Vize_Puanı=int(input("Vize sınavı puanınız: "))
+Final_Puanı=int(input("Final sınavı puanınız: "))
+Kaçırılan_Ders_Sayısı=int(input("Kaçırılan ders sayısı: "))
+Yıl_Sonu_Puanı=int(Vize_Puanı)*0.3+int(Final_Puanı)*0.50+int(100-(Kaçırılan_Ders_Sayısı*5))*0.20
+print(Yıl_Sonu_Puanı)
+Dosya=open("ÖgrenciNotHesaplama.txt", "w")
+print("""
+
+
+               Öğrencilerimizi yıl boyunca göstermiş oldukları yoğun çalışmalarından
+              ve vermiş oldukları emeklerinden dolayı tebrik eder ve başarılarının
+                                    devamını dileriz.""","\n"
+
+
+"İsmi:",Ad,
+"Soyismi:",Soyad,
+"Vize Puanı:",Vize_Puanı,
+"Final Puanı:",Final_Puanı,
+"Devamsızlık:",Kaçırılan_Ders_Sayısı,
+"Yıl Sonu Puanı:",Yıl_Sonu_Puanı,sep="\n",file=Dosya)
+Dosya.close()
+
+
+------------------------------------------------------------------------------------
+#faiz hesaplama#
+
+anapara=float(input("ana para miktarını yazınız: "))
+yıl=float(input("faiz süresini yazınız: "))
+oran=float(input("faiz oranını yazınız: "))
+
+faiz_hesaplama=float(anapara*yıl*oran)/100
+toplam_para=anapara+faiz_hesaplama
+aylık_faiz=faiz_hesaplama/12
+günlük_faiz=aylık_faiz/30
+
+dosya=open("faizHesaplama.txt","w")
+
+print("\n","alınacak faiz miktarı: ",faiz_hesaplama,"\n","alınacak aylık faiz: ",aylık_faiz,"\n","alınacak günlük faiz: ",günlük_faiz,"\n","faiz sonu toplam para: ",toplam_para,sep="",file=dosya)
+dosya.close()
+
+------------------------------------------------------------------------------------
+#aylık masraf hesaplama#
+
+mutfak=input("aylık mutfak masrafınızı yazınız: ")
+eğitim=input("aylık eğitim masrafınızı yazınız: ")
+giyim= input("aylık giyim masrafınızı yazınız: ")
+ulaşım=input("aylık ulaşım masrafınızı yazınız: ")
+aylık_gelir=input("aylık maaşınız: ")
+
+toplam_masraf=int(mutfak)+int(eğitim)+int(giyim)+int(ulaşım)
+oran=int(toplam_masraf)/int(aylık_gelir)
+dosya=open("aylıkmasraf.txt","w")
+print("Toplam Masraf: ",toplam_masraf,"Aylık Masraf Gelir Oranı: ",oran,sep="\n",file=dosya)
+dosya.close()
+
+------------------------------------------------------------------------------------
+#3 farklı yöntem ile printleme#
+
+print('Python\'un kurucusu Guido Van Rossum, Hollanda\'nın Amsterdam\'daki "Universiteit Van Amsterdam" okulundan 1982\'de mezun olmuştur.')
+print("Python'un kurucusu Guido Van Rossum, Hollanda'nın Amsterdam'daki \"Universiteit Van Amsterdam\" okulundan 1982'de mezun olmuştur.")
+print("""Python'un kurucusu Guido Van Rossum, Hollanda'nın Amsterdam'daki "Universiteit Van Amsterdam" okulundan 1982'de mezun olmuştur.""")
+
