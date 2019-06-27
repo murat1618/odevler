@@ -1,0 +1,177 @@
+#burç bulma
+print("Merhaba şimdi sizinle hangi burç olduğunuzu bulacağız")
+print("Ay ismini yazarken lütfen büyük harf ile başlamayı unutmayınız!!!")
+
+gün= int(input("Lütfen ayın kaçında doğduğunuzu giriniz :"))
+ay= input("Lütfen hangi ayda doğduğunuzu yazınız: ")
+
+if gün >=1 and gün <=20 and ay=="Ocak":
+    print("Burcunuz Oğlak'tır.")
+elif gün >=1 and gün <=19 and ay=="Şubat":
+    print("Burcunuz Kova'dır.")
+elif gün >=20 and gün <=29 and ay=="Şubat":
+    print("Burcunuz Balık'tır.")
+elif gün >=1 and gün <=20 and ay=="Mart":
+    print("Burcunuz Balık'tır.")
+elif gün >=21 and gün <=31 and ay=="Mart":
+    print("Burcunuz Koç'tur.")
+elif gün >=1 and gün <=20 and ay=="Nisan":
+    print("Burcunuz Koç'tur.")
+elif gün >=21 and gün <=30 and ay=="Nisan":
+    print("Brucunuz Boğa'dır")
+elif gün >=1 and gün <=20 and ay=="Mayıs":
+    print("Burcunuz Boğa'dır.")
+elif gün >=21 and gün <=31 and ay=="Mayıs":
+    print("Burcunuz İkizler'dir.")
+elif gün >=1 and gün <=21 and ay=="Haziran":
+    print("Burcunuz İkizler'dir.")
+elif gün >=22 and gün <=30 and ay=="Haziran":
+    print("Burcunuz Yengeç'tir.")
+elif gün >=1 and gün <=22 and ay=="Temmuz":
+    print("Burcunuz Yengeç'tir.")
+elif gün >=23 and gün <=31 and ay=="Temmuz":
+    print("Burcunuz Aslan'dır.")
+elif gün >=1 and gün <=23 and ay=="Ağustos":
+    print("Burcunuz Aslan'dır.")
+elif gün >=24 and gün <=31 and ay=="Ağustos":
+    print("Burcunuz Başak'tır.")
+elif gün >=1 and gün <=23 and ay=="Eylül":
+    print("Burcunuz Başak'tır.")
+elif gün >=24 and gün <=30 and ay=="Eylül":
+    print("Burcunuz Terazi'dir.")
+elif gün >=1 and gün <=23 and ay=="Ekim":
+    print("Burcunuz Terazi'dir.")
+elif gün >=24 and gün <=31 and ay=="Ekim":
+    print ("Burcunuz Akrep'tir.")
+elif gün >=1 and gün <=22 and ay=="Kasım":
+    print("Burcunuz Akrep'tir.")
+elif gün >=23 and gün <=30 and ay=="Kasım":
+    print("Burcunuz Yay'dır.")
+elif gün >=1 and gün <=21 and ay=="Aralık":
+    print("Burcunuz Yay'dır.")
+elif gün >=22 and gün <=31 and ay=="Aralık":
+    print("Burcunuz Oğlak'tır.")    
+--------------------------------------------------------------------------------------------
+#km-mil ve mil-km ile dönüşüm yapma
+print("""Merhaba hoşgeldiniz,
+şimdi sizinle km-mil veya mil-km ile
+dönüştürmek istediğiniz mesafeyi bulacağız.""")
+print("""
+Km-Mil dönüşümü yapmak için 1'e
+Mil-Km dönüşümü yapmak için 2'ye
+""")
+while True:
+        seçenek=int(input("""Lütfen yukarıdaki seçeneklerden
+dönüşümünü yapmak istediğinizi seçiniz: """))
+        çıkış=input("Çıkmak için (q)'ya, devam etmek için ENTER'a basınız")
+
+        if çıkış=="q":
+            print("Sistemden çıkılıyor...")
+            break
+        pass
+        if seçenek ==int(1):
+           mil=input("Lütfen dönüşüm yapmak istediğiniz km değerini giriniz: ")
+           print(int(mil)*float(0.6213),"mil")
+           çıkış=input("Lütfen sistemden çıkmak için 'q'ya basınız.")
+           if çıkış=="q":
+               print("Sistemden çıkılıyor...")
+           break
+        elif seçenek==int(2):
+            km=input("Lütfen dönüşüm yapmak istediğiniz mil değerini giriniz: ")
+            print(int(km)*float(1.609),"km")
+            çıkış=input("Lütfen sistemden çıkmak için 'q'ya basınız.")
+            if çıkış=="q":
+                print("Sistemden çıkılıyor...")                
+            break
+        elif çıkış=="q":
+            print("Sistemden çıkılıyor...")
+            break
+--------------------------------------------------------------------------------------------
+#username ve parola oluşturma
+
+print("""
+-Lütfen rakam içermeyen ve 3-18 karakter
+uzunluğunda bir kullanıcı adı oluşturun.
+-Kullanıcı adını oluşturduktan sonra 6-18 karakter
+uzunluğunda bir parola oluşturunuz""")
+
+rakam=("0123456789")
+
+while True:
+    username=input("Kullanıcı adınızı belirleyiniz: ")
+    if len(username)<3 or len(username)>18:
+        print("Username 3-18 karakter arasından belirleyiniz")
+        continue
+    for a in username:
+        if a in rakam:
+            print("Kullanıcı adında rakam kullanamazsınız")
+            break
+    else:
+        break
+
+while True:
+    parola=input("Kullanmak istediğiniz parolanızı yazınız: ")
+    if 6>len(parola) or 18<len(parola):
+        print("Parolanız 6-18 karakter arası olmalıdır")
+        continue
+    else:
+        break
+
+    print("username:",username,"\n","parola:",parola,sep="")
+    dosya=open("kullanıcıadı.txt","w")
+    print("username: ",username,"\n","parola: ",parola,sep="",file=dosya)
+    dosya.close()
+#dosyanın kaydı gözükmüyor neden?
+--------------------------------------------------------------------------------------------
+#sayı tahmın etme
+
+print("""aklımdan 10'a kadar bır sayı tuttum
+sayıyı tahmın edınız """)
+
+sayı=7
+for i in range(8):
+    tahmin=int(input("1-10 arası bır sayı yazınız:  "))
+    if (i==4 or i==3) and sayı==tahmin:
+        print("Zorlansanız da bilmeyi başardınız")
+        print("*")
+        break
+    elif (i==2 or i==1) and sayı==tahmin:
+        print("Güzel tahmin ortalama bir başarı")
+        print("**")
+        break
+    elif i==0 and sayı==tahmin:
+        print("Tebrikler ilk seferde bildiniz.")
+        print("***")
+        break
+    elif i==5:
+        print("Bilemediniz!")
+        break
+--------------------------------------------------------------------------------------------
+#atm işlemi
+
+print("""Aşağıdaki işlemlerden hangisini
+yapmak istiyorsanız lütfen seçiniz..
+
+1-Bakiye Kontrolü
+2-Para Yatırma
+3-Para Çekme
+""")
+
+while True:
+    seçenek=input("Yapmak istediğiniz işlemin numarasını yazınız")
+    if seçenek=="1":
+        print("Hesabınızda 1000 euro bulunmaktadır.")
+        break
+    elif seçenek=="2":
+        yatırılacak_miktar=input("Yatırmak istediğiniz miktar: ")
+        print("Güncel bakiyeniz",int(yatırılacak_miktar)+1000,"euro'dur. Başka bir işlem yapmak istiyor musunuz?")
+        break
+    elif seçenek=="3":
+        çekilecek_miktar=input("Çekmek istediğiniz miktar: ")
+        if int(çekilecek_miktar)>1000:
+            print("""Hesabınızda bulunan miktardan daha fazlasını çekemezsiniz,
+max hesabınızdaki miktar kadar çekebilirsiniz. Lütfen tekrar deneyiniz.""")
+        elif int(çekilecek_miktar)<=1000:
+            print("Güncel bakiyeniz",1000-int(çekilecek_miktar),"euro'dur. Başka bir işlem yapmak istiyor musunuz?""")
+
+        break
