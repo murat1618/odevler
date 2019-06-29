@@ -68,7 +68,7 @@ dönüşümünü yapmak istediğinizi seçiniz: """))
         if çıkış=="q":
             print("Sistemden çıkılıyor...")
             break
-        pass
+       
         if seçenek ==int(1):
            mil=input("Lütfen dönüşüm yapmak istediğiniz km değerini giriniz: ")
            print(int(mil)*float(0.6213),"mil")
