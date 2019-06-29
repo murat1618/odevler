@@ -161,11 +161,11 @@ while True:
     seçenek=input("Yapmak istediğiniz işlemin numarasını yazınız")
     if seçenek=="1":
         print("Hesabınızda 1000 euro bulunmaktadır.")
-        break
+        
     elif seçenek=="2":
         yatırılacak_miktar=input("Yatırmak istediğiniz miktar: ")
         print("Güncel bakiyeniz",int(yatırılacak_miktar)+1000,"euro'dur. Başka bir işlem yapmak istiyor musunuz?")
-        break
+        
     elif seçenek=="3":
         çekilecek_miktar=input("Çekmek istediğiniz miktar: ")
         if int(çekilecek_miktar)>1000:
