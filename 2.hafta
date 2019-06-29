@@ -101,7 +101,7 @@ while True:
     username=input("Kullanıcı adınızı belirleyiniz: ")
     if len(username)<3 or len(username)>18:
         print("Username 3-18 karakter arasından belirleyiniz")
-        continue
+        
     for a in username:
         if a in rakam:
             print("Kullanıcı adında rakam kullanamazsınız")
@@ -113,7 +113,7 @@ while True:
     parola=input("Kullanmak istediğiniz parolanızı yazınız: ")
     if 6>len(parola) or 18<len(parola):
         print("Parolanız 6-18 karakter arası olmalıdır")
-        continue
+       
     else:
         break
 
