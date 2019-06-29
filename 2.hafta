@@ -100,7 +100,7 @@ rakam=("0123456789")
 while True:
     username=input("Kullanıcı adınızı belirleyiniz: ")
     if len(username)<3 or len(username)>18:
-        print("Username 3-18 karakter arasından belirleyiniz")
+        print("Kullanıcı adınızı 3-18 karakter aralığında belirleyiniz")
         
     for a in username:
         if a in rakam:
