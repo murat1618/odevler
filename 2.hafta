@@ -160,7 +160,7 @@ yapmak istiyorsanız lütfen seçiniz..
 while True:
     seçenek=input("Yapmak istediğiniz işlemin numarasını yazınız")
     if seçenek=="1":
-        print("Hesabınızda 1000 euro bulunmaktadır.")
+        print("Hesabınızda 1000 euro bulunmaktadır.  Başka bir işlem yapmak istiyor musunuz?")
         
     elif seçenek=="2":
         yatırılacak_miktar=input("Yatırmak istediğiniz miktar: ")
