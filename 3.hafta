@@ -1,1 +1,243 @@
+#1.ODEV: HESAP OLUSTURMA
 
+
+with open("kullanıcı_bilgileri.txt", "r+") as dosya:
+    a = dosya.readlines()
+    kullanıcı_adı = []
+    parola = []
+    for i in range(len(a)):
+        if i % 2 == 0:
+            kullanıcı_adı.append(a[i])
+        if i % 2 == 1:
+            parola.append(a[i])
+
+    while True:
+        girdi = input("Kullanıcı adı giriniz: ")
+        if girdi + "\n" in kullanıcı_adı:
+            print("Girdiğiniz kullanıcı adı daha önce alınmış, lütfen başka bir tane deneyiniz!")
+        else:
+            dosya.write(girdi + "\n")
+            break
+
+    while True:
+        girdi = input("Parola giriniz: ")
+        if girdi + "\n" in parola:
+            print("Girdiğiniz parola daha önce alınmış, lütfen başka bir tane deneyiniz!")
+        else:
+            dosya.write(girdi + "\n")
+            print("Kullanıcı adı ve parolanız başarıyla kaydedilmiştir.")
+            break
+
+-----------------------------------------------------------------------------------------------------------
+
+#2.ODEV: SAYI TAHMIN OYUNUa=0
+
+while True:
+    a+=1
+
+    soru=int(input("Bir sayı giriniz: "))
+
+
+    if 85 < soru <=90:
+        print("Çok yaklaştın biraz aşağı in")
+
+    elif soru > 90:
+        print("Büyük bir sayı girdin biraz daha aşağı in")
+
+    elif 80 <= soru < 85:
+        print("Çok yaklaştın biraz yukarı çık")
+
+    elif soru < 80:
+        print("Küçük bir sayı girdin, biraz yukarı çık")
+
+    elif soru == 85:
+        print("Tebrikler",a, "denemede buldunuz." )
+        break
+
+-----------------------------------------------------------------------------------------------------------
+
+#3.ODEV: LISTE AYIKLAMA
+
+dosya = open("futbolcular.txt")
+veri = dosya.readlines()
+
+
+for i in veri:
+
+    if "Fenerbahçe" in i:
+        fb = open("fenerbahçe.txt","a")
+        fb.write(i)
+
+    elif "Galatasaray" in i:
+        gs = open("galatasaray.txt","a")
+        gs.write(i)
+
+    elif "Beşiktaş" in i:
+        bjk = open("beşiktaş.txt","a")
+        bjk.write(i)
+
+
+dosya.close()
+fb.close()
+gs.close()
+bjk.close()
+
+-----------------------------------------------------------------------------------------------------------
+
+#4.ODEV: ALAN-HACIM HESAPLAMA
+
+
+while True:
+    print("""
+Alan ve Hacim Hesaplama:
+    Alanlar:
+
+    Karenin Alanı için      1
+    Üçgenin Alanı için      2
+    Dikdörtgenin Alanı için 3
+
+    Hacimler:
+
+    Küp Hacmi için          4
+    Küre Hacmi için         5
+    Koni Hacmi için         6
+
+    Çıkış                   7
+
+Yapmak istediğiniz işlem numarasını giriniz.
+""")
+
+    try:
+
+        islem = int(input("Yapılmak istenen işlem: "))
+        if islem > 7 or islem < 1:
+            print("Lütfen 1 ile 7 arasında değer giriniz.")
+            continue
+        elif islem == 7:
+            break
+        elif islem == 1:
+            print("""
+Karenin alanını seçtiniz.
+Bir kenar uzunluğunu giriniz: 
+""")
+
+            kenar = int(input("Kenar: "))
+            if kenar <= 0:
+                print("Lütfen sıfırdan büyük değerler giriniz.")
+                continue
+            print("Karenin alanı: ", kenar ** 2)
+        elif islem == 2:
+            print("""
+
+Üçgenin alanını seçtiniz.
+Taban kenar uzunluğunu ve yüksekliğini giriniz: 
+""")
+
+            taban_kenar = int(input("Taban Kenar: "))
+            if taban_kenar <= 0:
+                print("Lütfen sıfırdan büyük değerler giriniz.")
+                continue
+            yukseklik = int(input("Yükseklik: "))
+            if yukseklik <= 0:
+                print("Lütfen sıfırdan büyük değerler giriniz.")
+                continue
+            print("Üçgenin alanı: ", (taban_kenar * yukseklik) / 2)
+        elif islem == 3:
+            print("""
+Dikdörtgenin alanını seçtiniz.
+İki kenar uzunluğunu giriniz: 
+""")
+
+            kenar_1 = int(input("1. Kenar: "))
+            if kenar_1 <= 0:
+                print("Lütfen sıfırdan büyük değerler giriniz.")
+                continue
+            kenar_2 = int(input("2. Kenar: "))
+            if kenar_2 <= 0:
+                print("Lütfen sıfırdan büyük değerler giriniz.")
+                continue
+            print("Dikdörtgenin alanı: ", kenar_1 * kenar_2)
+        elif islem == 4:
+            print("""
+
+Küpün hacmini seçtiniz.
+Bir kenar uzunluğunu giriniz: 
+""")
+
+            kenar = int(input("Kenar: "))
+            if kenar <= 0:
+                print("Lütfen sıfırdan büyük değerler giriniz.")
+                continue
+            print("Küpün hacmi: ", kenar ** 3)
+        elif islem == 5:
+            print("""
+
+Kürenin hacmini seçtiniz.
+Yarıçap uzunluğunu giriniz: 
+""")
+
+            yaricap = int(input("Yarı çap: "))
+            if yaricap <= 0:
+                print("Lütfen sıfırdan büyük değerler giriniz.")
+                continue
+            print("Kürenin hacmi: ", (4 / 3) * 3.14 * (yaricap ** 3))
+        elif islem == 6:
+            print("""
+
+Koninin hacmini seçtiniz.
+Yarıçap ve yükseklik uzunluklarını giriniz: 
+""")
+
+            yaricap = int(input("Yarı çap: "))
+            if yaricap <= 0:
+                print("Lütfen sıfırdan büyük değerler giriniz.")
+                continue
+            yukseklik = int(input("Yükseklik: "))
+            if yukseklik <= 0:
+                print("Lütfen sıfırdan büyük değerler giriniz.")
+                continue
+            print("Koninin hacmi: ", (1 /3) * 3.14 * (yaricap ** 2) * yukseklik)
+    except:
+        print("Lütfen sayısal veriler giriniz.")
+
+-----------------------------------------------------------------------------------------------------------
+
+#5.FIZZ BUZZ
+
+
+for b in range(1,100):
+    if b%3==0 and b%5==0:
+        print("FIZZBUZZ")
+    elif b%3==0:
+        print("FIZZ")
+    elif b%5==0:
+        print("BUZZ")
+    else:
+        print(b)
+
+
+-----------------------------------------------------------------------------------------------------------
+
+#6.ODEV: ASAL SAYI
+
+
+while True:
+    try:
+    
+        sayi=int(input("asal sayi olup olamdigini ogrenmek istediginiz pozitif tamsayi :"))
+
+        if sayi<=1:
+            print("""Yalniz 1'e ve kendisine kalansiz bolunebilen
+        1'den buyuk dogal sayilara asal say denir""")
+            print("\nLUTFEN 1'DEN BUYUK BIR SAYI GIRINIZ\n")
+        elif sayi!=2 and sayi%2==0:
+            print("girmis oldugunuz", sayi, " sayisi asal sayi degildir.\n")
+        elif sayi!=3 and sayi%3==0:
+            print("girmis oldugunuz", sayi, " sayisi asal sayi degildir.\n")
+        elif sayi!=5 and sayi%5==0:
+            print("girmis oldugunuz", sayi, " sayisi asal sayi degildir.\n")
+        else:
+            print("girmis oldugunuz", sayi, " sayisi asal sayidir.\n") 
+
+    except ValueError:
+        print("Lutfen bir sayi giriniz...\n")
