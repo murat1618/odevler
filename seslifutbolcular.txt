@@ -1,0 +1,21 @@
+Alper Potuk,Fenerbahçe
+Ozan Tufan,Fenerbahçe
+Uygar Zeybek,Fenerbahçe
+Idriss Carlos Kameni,Fenerbahçe
+İsmail Köybaşı,Fenerbahçe
+Aatif Chahechouhe,Fenerbahçe
+Ahmet Çalık,Galatasaray
+Eren Derdiyok,Galatasaray
+Emrah Başsan,Galatasaray
+Eray İşcan,Galatasaray
+Alexander Miloševic,Beşiktaş
+Atiba Hutchinson,Beşiktaş
+Oğuzhan Özyakup,Beşiktaş
+Aras Özbiliz,Beşiktaş
+Andreas Beck,Beşiktaş
+Atınç Nukan,Beşiktaş
+Utku Yuvakuran,Beşiktaş
+Aras Özbiliz,Beşiktaş
+Andreas Beck,Beşiktaş
+Atınç Nukan,Beşiktaş
+Utku Yuvakuran,Beşiktaş
