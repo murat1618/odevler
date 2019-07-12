@@ -1,0 +1,72 @@
+##1-)Kullanıcıdan bir input alınız. Input'taki küçük harfleri büyük harfe dönüştüren bir program yazınız.
+##Ör input: Hello World! 
+##Ör output: HELLO WORLD!
+
+login=input("Write a sentencew: ")  #kullanıcıdan bir girdi alıyoruz
+print("In capital letters: ",login.upper()) #upper() metodu ile inputtaki küçük harfleri büyük harflere çeviriyotuz
+-------------------------------------------------------------------------------------------------------------
+##2-)Kullanıcıdan bir input alınız. Girmiş olduğu inputta büyük harf sayısı, küçük harf sayısı, rakam sayısı ve bunların haricindeki özel karakter sayılarını veren bir program yazınız.
+
+uppercase = 0
+lowercase = 0  # değişkenlere değerleri almak için önceden tanımlayıp 0 atıyoruz
+number = 0
+special_character = 0
+
+text = input("Write the text you want to review: ")  #input text değişkenine atadık
+for i in text:
+
+    if i.isupper():     #büyük harfse
+        uppercase+=1
+
+    elif i.islower():   #küçük harfse
+        lowercase+=1
+
+    elif i.isnumeric():   #numeric ise
+        number+=1
+
+    else:                           #hiç biri değilse
+        special_character+=1
+
+print("'{}' has \n{} uppercase letters, \n{} lowercase letters, \n{} number, \n{} special_character.".format(text,uppercase,lowercase,number,special_character))
+-------------------------------------------------------------------------------------------------------------
+##3-)Kullanıcıdan bir input alınız. Girmiş olduğu inputtaki rakamların toplamını veren bir ##program yazınız. (Kullanıcı rakam girmek zorunda değil farklı karakter girişi de yapabilir.)
+##Örnek input = "art12kl4*"
+
+addition = 0
+a = input("Write a text with both letters and numbers: ")     #input aldık
+for i in a:      #değerleri sırayla kontrol ediyoruz
+    if i.isnumeric():  #numeric ise
+        addition += int(i)  #addition değişkenini sayıya çevirip topluyoruz
+print("The sum of the numbers in the {} text: {}".format(a,addition))  # işlemlerden sonra                                     
+                                                                                                                                            #sonucu printliyoruz
+
+-------------------------------------------------------------------------------------------------------------
+##4-)Futbolcular dosyasındaki futbolculardan ismi sesli harf ile başlayanları ayrı bir dosyaya ##yazdırınız.
+
+with open("futbolcular.txt") as file:  # dosyayı açtık
+  ftb=file.readlines()  # değerleri ftb değişkenine eşitledik
+
+
+sesliharfler="AEIOUÖÜİaeiouöü" # sesli harfleri değişkene atadık
+for i in ftb:  # ftb deki elemanları kontrol için for döngüsüne aldık
+  for a in sesliharfler:  #sesli harfleri sırayla kontrol etmek için dögü içerisine aldık
+
+    if i.startswith(a): # eğer i ilk harfi sesli harflerden birisiyse
+      print(i)   #yazdir 
+      with open("seslifutbolcular.txt","a") as dosya:  # dosyayı açtık
+        dosya.write(i)  # dosyaya yazdırıyoruz
+
+
+        -------------------------------------------------------------------------------------------------------------
+
+##5-)Futbolcular dosyasındaki futbolcu isimlerini yazdığınız program ile Türkçe karakter içermeyecek bir hale getirip yeni bir dosyaya kaydediniz.
+
+with open("futbolcular.txt") as file:    #dosyayı açtık
+  futbolcular=file.read()     #dosya değerlerini string şeklinde değişkene attık
+  
+kaynak="şçöğüiŞÇÖĞÜİ"  
+hedef="scoguiSCOGUI"
+tablo=str.maketrans(kaynak,hedef)    #çeviri tablosu oluşturduk str.maketrans metodu ile
+
+with open("YENİfutbolcular.txt","w") as file:    #dosyayı açtık
+  file.write(futbolcular.translate(tablo))   #çevirdiğimiz stringi başka bir dosyaya kaydettik 
