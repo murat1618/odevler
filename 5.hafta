@@ -68,7 +68,7 @@ print(harfler)
 while tahmin_hak < 6:
     print(menü)
     seçim = input("Lütfen menüden numara seçiniz: ")
-    print("{} adet yanlış tahmin hakkınız kaldı.:".format(6-tahmin_hak )) ##6 dan çıkardık mı tahminleri
+    print("{} adet yanlış tahmin hakkınız kaldı.:".format(6-tahmin_hak )) 
 
     if seçim == '1':
         harf = input("Harf giriniz: ")
@@ -76,7 +76,7 @@ while tahmin_hak < 6:
 
 
             if harf not in kelime:
-                print(resim[tahmin_hak]) ## resimden sonra liste içindeki tahmin nedir
+                print(resim[tahmin_hak]) 
                 print("Girilen harfler kelimede bulunmamaktadır, adamınız asıldı")
                 tahmin_hak += 1
 
@@ -86,7 +86,7 @@ while tahmin_hak < 6:
                 for i in kelime or i.upper() in kelime: #upper metodu ile her kelimeyi büyük kabul ettirdik
                     if i == harf or i.upper() == harf:
                         harfler.pop(k) # pop methodu ile tahmin ettiğimiz harfi listeden çıkartıyoruz
-                        harfler.insert(k, harf) #(tam olarak ne yapıldı)insert methodu ile tahmin edilen harfleri gerekli yerlere eklemiş oluyoruz
+                        harfler.insert(k, harf) #insert methodu ile tahmin edilen harfleri gerekli yerlere eklemiş oluyoruz
                         k += 1
 
                     else:
